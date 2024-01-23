@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sokoban</title>
+		<script src="main.js"></script>
+		<script src="Rdlom.js"></script>
+		<style>
+			table {
+				border-collapse: collapse;
+				display: inline-block;
+			}
+			table,
+			th,
+			td {
+				border: 1px solid #030303;
+				padding: 0;
+				border: none;
+			}
+			img {
+				display: block;
+			}
+			.shadow {
+				-webkit-box-shadow: 3px 3px 3px 3px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+				-moz-box-shadow: 3px 3px 3px 3px #ccc; /* Firefox 3.5 - 3.6 */
+				box-shadow: 3px 3px 3px 3px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<button type="button" onclick="loadRandomGame();">
+				Load random game
+			</button>
+		</center>
+		<br />
+		<div
+			style="align-content: center; text-align: center;"
+			id="board"
+		></div>
+		<div style="align-content: center; text-align: center;">
+			<span id="level"></span><br />
+			<span id="author"></span>
+			<br />
+			<br />
+			<div
+				id="control"
+				style="
+					align-content: center;
+					text-align: center;
+					display: none;
+				"
+			>
+				Điều khiển: <br />
+				<center>
+					<img src="./up.png" height="50" onclick="doMove(UP);" />
+					<img
+						src="./left.png"
+						width="50"
+						style="display: inline-block;"
+						onclick="doMove(LEFT);"
+					/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img
+						src="./right.png"
+						width="50"
+						style="display: inline-block;"
+						onclick="doMove(RIGHT);"
+					/>
+					<img src="./down.png" height="50" onclick="doMove(DOWN);" />
+				</center>
+				<br />
+				<br />
+			</div>
+			Programmer: Huy Nguyễn - 2020
+			<br />
+			Sokoban Skin by
+			<a
+				href="https://en.wikipedia.org/wiki/User:Carloseow"
+				class="extiw"
+				title="wikipedia:User:Carloseow"
+				>Carloseow</a
+			>
+			at
+			<a
+				href="https://en.wikipedia.org/wiki/"
+				class="extiw"
+				title="wikipedia:"
+				>English Wikipedia</a
+			>,
+			<a
+				href="https://creativecommons.org/licenses/by/3.0"
+				title="Creative Commons Attribution 3.0"
+				>CC BY 3.0</a
+			>,
+			<a href="https://commons.wikimedia.org/w/index.php?curid=35846111"
+				>Link</a
+			>
+			<br />
+			<a href="https://en.wikipedia.org/wiki/Sokoban"
+				>Sokoban in wikipedia</a
+			>
+		</div>
+
+		<div
+			id="result"
+			class="shadow"
+			style="
+				align-content: center;
+				text-align: center;
+				background-color: rgb(10, 252, 43);
+				width: 20%;
+				height: 50px;
+				position: absolute;
+				border: 3px solid blue;
+				padding: 50px;
+				margin: 10px;
+				display: none;
+			"
+		>
+			<span style="color: red; font-size: xx-large;">
+				Chúc mừng bạn !
+			</span>
+		</div>
+	</body>
+</html>
